@@ -1,0 +1,37 @@
+{
+    "name": "stolt/config-cartographer",
+    "description": "A PHP library and CLI for discovering, tracing, and visualizing application configuration dependencies.",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.3",
+        "symfony/console": "^6.4|^7.0",
+        "symfony/finder": "^6.4|^7.0",
+        "symfony/yaml": "^6.4|^7.0",
+        "nikic/php-parser": "^5.0"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^9.0@RC",
+        "phpunit/phpunit": "^11.0",
+        "zenstruck/console-test": "^1.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "ConfigCartographer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ConfigCartographer\\Spec\\": "spec/",
+            "ConfigCartographer\\Tests\\": "tests/"
+        }
+    },
+    "bin": [
+        "bin/config-cartographer"
+    ],
+    "config": {
+        "sort-packages": true
+    }
+}

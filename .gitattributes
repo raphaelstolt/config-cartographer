@@ -1,0 +1,11 @@
+* text=auto eol=lf
+
+* export-ignore
+
+composer.json           -export-ignore
+bin/                    -export-ignore
+bin/config-cartographer -export-ignore
+LICENSE.md              -export-ignore
+README.md               -export-ignore
+src/                    -export-ignore
+src/**                  -export-ignore

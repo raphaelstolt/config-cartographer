@@ -1,0 +1,4 @@
+# Valid YAML file in same directory as malformed file
+framework:
+    secret: '%env(APP_SECRET)%'
+    debug: true

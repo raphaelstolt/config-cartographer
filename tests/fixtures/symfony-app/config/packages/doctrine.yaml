@@ -1,0 +1,9 @@
+doctrine:
+    dbal:
+        url: '%env(DATABASE_URL)%'
+        server_version: '15'
+        charset: utf8
+
+framework:
+    secret: '%env(APP_SECRET)%'
+    debug: '%env(bool:APP_DEBUG)%'

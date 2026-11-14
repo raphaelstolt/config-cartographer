@@ -1,0 +1,5 @@
+format: pretty
+color: true
+stop_on_failure: false
+spec_path: spec
+src_path: src

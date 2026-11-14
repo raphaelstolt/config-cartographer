@@ -1,0 +1,7 @@
+# Malformed YAML file - tests graceful error handling
+doctrine:
+    dbal:
+        url: '%env(DATABASE_URL)%'
+    invalid_yaml:
+        - missing_colon
+        [invalid bracket

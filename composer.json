@@ -18,38 +18,14 @@
         "symfony/yaml": "^6.4|^7.0",
         "nikic/php-parser": "^5.0"
     },
-    "require-dev": {
-        "carthage-software/mago": "^1.60",
-        "phpspec/phpspec": "^9.0@RC",
-        "phpstan/phpstan": "^2.3",
-        "phpunit/phpunit": "^11.0",
-        "stolt/composer-peel": "^4.2",
-        "stolt/php-lean": "^0.9.3",
-        "zenstruck/console-test": "^1.8"
-    },
     "autoload": {
         "psr-4": {
             "ConfigCartographer\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "ConfigCartographer\\Spec\\": "spec/",
-            "ConfigCartographer\\Tests\\": "tests/"
-        }
-    },
     "bin": [
         "bin/config-cartographer"
     ],
-    "scripts": {
-        "unit-test": "phpspec run --format=dot --no-interaction",
-        "integration-test": "phpunit",
-        "test": ["@unit-test", "@integration-test"],
-        "lint": "php -l src/**/*.php",
-        "cs-lint": "mago lint",
-        "static-analysis": "phpstan analyse",
-        "validate-gitattributes": "php-lean lint"
-    },
     "config": {
         "sort-packages": true
     }

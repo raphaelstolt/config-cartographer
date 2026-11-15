@@ -13,7 +13,7 @@ class Application extends SymfonyApplication
 {
     public function __construct()
     {
-        parent::__construct('config-cartographer', '0.1.0-dev');
+        parent::__construct('config-cartographer', '0.1.0');
 
         $this->addCommand(new ScanCommand());
         $this->addCommand(new TraceCommand());

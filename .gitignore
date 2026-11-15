@@ -3,3 +3,4 @@
 *.cache
 *.log
 .phpspec/
+.composer-unpeeled.json

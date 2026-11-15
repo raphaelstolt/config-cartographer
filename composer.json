@@ -31,6 +31,12 @@
     "bin": [
         "bin/config-cartographer"
     ],
+    "scripts": {
+        "unit-test": "phpspec run --format=dot --no-interaction",
+        "integration-test": "phpunit",
+        "test": ["@unit-test", "@integration-test"],
+        "lint": "php -l src/**/*.php"
+    },
     "config": {
         "sort-packages": true
     }

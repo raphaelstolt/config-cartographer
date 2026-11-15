@@ -11,11 +11,14 @@ git clone git@github.com:raphaelstolt/config-cartographer.git && cd config-carto
 composer install
 ```
 
-Verify the setup by running the test suites:
+Verify the setup by running all quality checks (matching CI):
 
 ```bash
-./vendor/bin/phpspec run
-./vendor/bin/phpunit
+composer cs-lint
+composer static-analysis
+composer validate-gitattributes
+composer architecture-analyse
+composer test
 ```
 
 ## Testing
@@ -28,19 +31,19 @@ This project uses two testing frameworks:
 Run the PHPSpec unit specs:
 
 ```bash
-./vendor/bin/phpspec run
+composer unit-test
 ```
 
 Run the PHPUnit integration tests:
 
 ```bash
-./vendor/bin/phpunit
+composer integration-test
 ```
 
 Run both together:
 
 ```bash
-./vendor/bin/phpspec run && ./vendor/bin/phpunit
+composer test
 ```
 
 ## Pull Requests
@@ -54,7 +57,12 @@ reflect the change, such as:
 
 Before opening a PR, ensure:
 
-1. Both test suites pass locally (`phpspec` and `phpunit`).
+1. All quality checks pass locally (matching CI):
+   - `composer cs-lint` — checks code style with Mago.
+   - `composer static-analysis` — runs PHPStan.
+   - `composer validate-gitattributes` — validates `.gitattributes`.
+   - `composer architecture-analyse` — checks architecture rules with Structarmed.
+   - `composer test` — runs both unit and integration tests.
 2. `CHANGELOG.md` is updated under the `[Unreleased]` section with a summary of changes.
 3. All commit messages follow [Conventional Commits](https://www.conventionalcommits.org/).
 

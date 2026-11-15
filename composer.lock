@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6206871a3e7067780908898ac5cb56e4",
+    "content-hash": "692fe2e7d890f9aa9346627cdf0b9239",
     "packages": [
         {
             "name": "nikic/php-parser",
@@ -1021,6 +1021,71 @@
             "published-time": "2026-11-15T03:04:54+00:00"
         },
         {
+            "name": "cebe/markdown",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cebe/markdown.git",
+                "reference": "9bac5e971dd391e2802dca5400bbeacbaea9eb86"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cebe/markdown/zipball/9bac5e971dd391e2802dca5400bbeacbaea9eb86",
+                "reference": "9bac5e971dd391e2802dca5400bbeacbaea9eb86",
+                "shasum": ""
+            },
+            "require": {
+                "lib-pcre": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "cebe/indent": "*",
+                "facebook/xhprof": "*@dev",
+                "phpunit/phpunit": "4.1.*"
+            },
+            "bin": [
+                "bin/markdown"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "cebe\\markdown\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carsten Brandt",
+                    "email": "mail@cebe.cc",
+                    "homepage": "http://cebe.cc/",
+                    "role": "Creator"
+                }
+            ],
+            "description": "A super fast, highly extensible markdown parser for PHP",
+            "homepage": "https://github.com/cebe/markdown#readme",
+            "keywords": [
+                "extensible",
+                "fast",
+                "gfm",
+                "markdown",
+                "markdown-extra"
+            ],
+            "support": {
+                "issues": "https://github.com/cebe/markdown/issues",
+                "source": "https://github.com/cebe/markdown"
+            },
+            "time": "2018-03-26T11:24:36+00:00",
+            "published-time": "2018-03-26T11:25:44+00:00"
+        },
+        {
             "name": "cucumber/gherkin",
             "version": "v39.1.0",
             "source": {
@@ -1109,6 +1174,139 @@
             },
             "time": "2026-06-24T19:53:04+00:00",
             "published-time": "2026-06-27T09:04:39+00:00"
+        },
+        {
+            "name": "ergebnis/agent-detector",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ergebnis/agent-detector.git",
+                "reference": "0cd815cec1207873c37624d33f0f2853523152f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ergebnis/agent-detector/zipball/0cd815cec1207873c37624d33f0f2853523152f3",
+                "reference": "0cd815cec1207873c37624d33f0f2853523152f3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0 || ~8.6.0"
+            },
+            "require-dev": {
+                "ergebnis/composer-normalize": "^2.54.0",
+                "ergebnis/license": "^2.8.0",
+                "ergebnis/php-cs-fixer-config": "^6.60.2",
+                "ergebnis/phpstan-rules": "^2.14.0",
+                "ergebnis/phpunit-slow-test-detector": "^2.26.0",
+                "ergebnis/rector-rules": "^1.18.5",
+                "fakerphp/faker": "^1.24.1",
+                "infection/infection": "^0.26.6",
+                "phpstan/extension-installer": "^1.4.3",
+                "phpstan/phpstan": "^2.2.14",
+                "phpstan/phpstan-deprecation-rules": "^2.0.5",
+                "phpstan/phpstan-phpunit": "^2.1.1",
+                "phpstan/phpstan-strict-rules": "^2.1.0",
+                "phpunit/phpunit": "^9.6.34",
+                "rector/rector": "^2.7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.3-dev"
+                },
+                "composer-normalize": {
+                    "indent-size": 2,
+                    "indent-style": "space"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ergebnis\\AgentDetector\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andreas Möller",
+                    "email": "am@localheinz.com",
+                    "homepage": "https://localheinz.com"
+                }
+            ],
+            "description": "Provides a detector for detecting the presence of an agent.",
+            "homepage": "https://github.com/ergebnis/agent-detector",
+            "support": {
+                "issues": "https://github.com/ergebnis/agent-detector/issues",
+                "security": "https://github.com/ergebnis/agent-detector/blob/main/.github/SECURITY.md",
+                "source": "https://github.com/ergebnis/agent-detector"
+            },
+            "time": "2026-10-15T11:13:32+00:00",
+            "published-time": "2026-10-15T11:15:00+00:00"
+        },
+        {
+            "name": "laravel/agent-detector",
+            "version": "v2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/agent-detector.git",
+                "reference": "9e0d78ab6848d34f3ce5a438ca99ae082afd910a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/agent-detector/zipball/9e0d78ab6848d34f3ce5a438ca99ae082afd910a",
+                "reference": "9e0d78ab6848d34f3ce5a438ca99ae082afd910a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.24.0",
+                "pestphp/pest": "^3.8.5|^4.1.0",
+                "pestphp/pest-plugin-type-coverage": "^3.0|^4.0.2",
+                "phpstan/phpstan": "^2.1.26",
+                "rector/rector": "^2.1.7",
+                "symfony/var-dumper": "^7.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "Laravel\\AgentDetector\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Detect if code is running in an AI agent or automated development environment",
+            "homepage": "https://github.com/laravel/agent-detector",
+            "keywords": [
+                "Agent",
+                "ai",
+                "automation",
+                "claude",
+                "cursor",
+                "detection",
+                "devin",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/agent-detector/issues",
+                "source": "https://github.com/laravel/agent-detector"
+            },
+            "time": "2026-10-20T16:40:29+00:00",
+            "published-time": "2026-10-20T16:41:46+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -1290,6 +1488,51 @@
             },
             "time": "2022-02-21T01:04:05+00:00",
             "published-time": "2022-02-21T01:04:30+00:00"
+        },
+        {
+            "name": "phppkg/cli-markdown",
+            "version": "v2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phppkg/cli-markdown.git",
+                "reference": "df45939a047e67220bf0292b785300182d6d6f5f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phppkg/cli-markdown/zipball/df45939a047e67220bf0292b785300182d6d6f5f",
+                "reference": "df45939a047e67220bf0292b785300182d6d6f5f",
+                "shasum": ""
+            },
+            "require": {
+                "cebe/markdown": "^1.2",
+                "ext-mbstring": "*",
+                "php": ">8.0.0",
+                "toolkit/cli-utils": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpPkg\\CliMarkdown\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "inhere",
+                    "email": "in.798@qq.com"
+                }
+            ],
+            "description": "Render colored markdown contents on console terminal",
+            "homepage": "https://github.com/phppkg/cli-markdown",
+            "support": {
+                "issues": "https://github.com/phppkg/cli-markdown/issues",
+                "source": "https://github.com/phppkg/cli-markdown/tree/v2.0.3"
+            },
+            "time": "2025-04-22T02:05:09+00:00",
+            "published-time": "2025-04-22T02:09:49+00:00"
         },
         {
             "name": "phpspec/phpspec",
@@ -3034,6 +3277,207 @@
             "published-time": "2024-10-20T05:09:39+00:00"
         },
         {
+            "name": "stolt/list-skills-command",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/raphaelstolt/list-skills-command.git",
+                "reference": "807c8fa237594f2fd49f8e99d8719824f18a2069"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/raphaelstolt/list-skills-command/zipball/807c8fa237594f2fd49f8e99d8719824f18a2069",
+                "reference": "807c8fa237594f2fd49f8e99d8719824f18a2069",
+                "shasum": ""
+            },
+            "require": {
+                "ergebnis/agent-detector": "^1.0",
+                "php": ">=8.2",
+                "phppkg/cli-markdown": "^2.0",
+                "stolt/skill-validator": "^0.0.1",
+                "symfony/console": "^8.0||^7.3"
+            },
+            "require-dev": {
+                "dg/bypass-finals": "^1.9",
+                "friendsofphp/php-cs-fixer": "^3.70.1",
+                "peckphp/peck": "^0.1.2",
+                "phpstan/phpstan": "^2.1",
+                "phpunit/phpunit": "^11.4.4",
+                "stolt/lean-package-validator": "^4.4",
+                "zenstruck/console-test": "^1.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stolt\\Console\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Raphael Stolt",
+                    "email": "raphael.stolt@gmail.com"
+                }
+            ],
+            "description": "A symfony/console command for listing and introspecting AI skills files of a project.",
+            "keywords": [
+                "SKILL.md",
+                "agent-skills",
+                "ai",
+                "boost",
+                "cli",
+                "console",
+                "introspect",
+                "list",
+                "php",
+                "skills",
+                "symfony"
+            ],
+            "support": {
+                "issues": "https://github.com/raphaelstolt/list-skills-command/issues",
+                "source": "https://github.com/raphaelstolt/list-skills-command/tree/v1.4.0"
+            },
+            "time": "2026-05-04T10:46:31+00:00",
+            "published-time": "2026-05-04T10:46:57+00:00"
+        },
+        {
+            "name": "stolt/php-lean",
+            "version": "v0.9.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lean-packages/php-lean.git",
+                "reference": "489367318d07b73959a422a2bd90d17826783542"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lean-packages/php-lean/zipball/489367318d07b73959a422a2bd90d17826783542",
+                "reference": "489367318d07b73959a422a2bd90d17826783542",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "laravel/agent-detector": "^2.0",
+                "php": "~8.2.0||~8.3.0||~8.4.0||~8.5.0||~8.6.0",
+                "sebastian/diff": "^9.0||^8.0||^7.0.0||^6.0.1||^5.0||^4.0.3",
+                "stolt/list-skills-command": "^1.0",
+                "symfony/console": "^8.0||^7.2.1||^v5.4.8"
+            },
+            "bin": [
+                "bin/php-lean"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stolt\\LeanPackage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Raphael Stolt",
+                    "email": "raphael.stolt@gmail.com"
+                }
+            ],
+            "description": "A library and CLI for validating and managing package release contents in lean distribution archives.",
+            "keywords": [
+                "classic",
+                "cli",
+                "creation",
+                "dev",
+                "dist",
+                "export-ignore",
+                "formatting",
+                "gitattributes",
+                "lean",
+                "lpv",
+                "negated",
+                "package",
+                "project",
+                "release",
+                "validation"
+            ],
+            "support": {
+                "issues": "https://github.com/lean-packages/php-lean/issues",
+                "source": "https://github.com/lean-packages/php-lean/tree/v0.9.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/raphaelstolt",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-11-12T18:55:26+00:00",
+            "published-time": "2026-11-12T18:55:54+00:00"
+        },
+        {
+            "name": "stolt/skill-validator",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/raphaelstolt/skill-validator.git",
+                "reference": "24139a994f424a063beecb606ce03259102fae7e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/raphaelstolt/skill-validator/zipball/24139a994f424a063beecb606ce03259102fae7e",
+                "reference": "24139a994f424a063beecb606ce03259102fae7e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2"
+            },
+            "require-dev": {
+                "dg/bypass-finals": "^1.9",
+                "friendsofphp/php-cs-fixer": "^3.70.1",
+                "peckphp/peck": "^0.1.2",
+                "phpstan/phpstan": "^2.1",
+                "phpunit/phpunit": "^11.4.4",
+                "stolt/lean-package-validator": "^4.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stolt\\Ai\\Skill\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Raphael Stolt",
+                    "email": "raphael.stolt@gmail.com"
+                }
+            ],
+            "description": "A PHP library for parsing and validating SKILL.md files or content.",
+            "keywords": [
+                "SKILL.md",
+                "agent-skills",
+                "ai",
+                "content",
+                "file",
+                "parse",
+                "parsing",
+                "php",
+                "skills",
+                "validate",
+                "validating"
+            ],
+            "support": {
+                "issues": "https://github.com/raphaelstolt/skill-validator/issues",
+                "source": "https://github.com/raphaelstolt/skill-validator/tree/v0.0.1"
+            },
+            "time": "2026-05-04T00:50:45+00:00",
+            "published-time": "2026-05-04T00:51:08+00:00"
+        },
+        {
             "name": "symfony/polyfill-deepclone",
             "version": "v1.43.2",
             "source": {
@@ -3336,6 +3780,65 @@
             ],
             "time": "2025-11-17T20:03:58+00:00",
             "published-time": "2025-11-17T20:04:52+00:00"
+        },
+        {
+            "name": "toolkit/cli-utils",
+            "version": "v2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-toolkit/cli-utils.git",
+                "reference": "74a100794144e673b084bf9fe415c39b1e9d737e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-toolkit/cli-utils/zipball/74a100794144e673b084bf9fe415c39b1e9d737e",
+                "reference": "74a100794144e673b084bf9fe415c39b1e9d737e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">8.1.0"
+            },
+            "require-dev": {
+                "ext-posix": "*",
+                "ext-readline": "*"
+            },
+            "suggest": {
+                "inhere/console": "a lightweight php console application library.",
+                "toolkit/pflag": "Command line flag parse library of the php"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Toolkit\\Cli\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "inhere",
+                    "email": "in.798@qq.com",
+                    "homepage": "http://github.com/inhere"
+                }
+            ],
+            "description": "useful cli tool library of the php",
+            "homepage": "https://github.com/php-toolkit/cli-utils",
+            "keywords": [
+                "cli",
+                "cli-color",
+                "command-line",
+                "library",
+                "php",
+                "tool"
+            ],
+            "support": {
+                "issues": "https://github.com/php-toolkit/cli-utils/issues",
+                "source": "https://github.com/php-toolkit/cli-utils/tree/v2.0.5"
+            },
+            "time": "2025-04-19T14:11:08+00:00",
+            "published-time": "2025-04-19T14:12:08+00:00"
         },
         {
             "name": "zenstruck/assert",

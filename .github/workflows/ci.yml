@@ -36,6 +36,9 @@ jobs:
       - name: Run PHPStan static analysis
         run: composer static-analysis
 
+      - name: Validate .gitattributes
+        run: composer validate-gitattributes
+
       - name: Run unit tests
         run: composer unit-test
 

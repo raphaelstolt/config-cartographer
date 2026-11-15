@@ -13,7 +13,6 @@ use ConfigCartographer\Domain\DiagnosticSeverity;
 use ConfigCartographer\Domain\Edge;
 use ConfigCartographer\Domain\EdgeKind;
 use ConfigCartographer\Domain\Node;
-use ConfigCartographer\Domain\NodeKind;
 use ConfigCartographer\Domain\SourceLocation;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;

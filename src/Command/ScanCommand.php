@@ -91,7 +91,7 @@ class ScanCommand extends Command
         $output->writeln('  <fg=cyan>Total edges:</>            ' . count($result->graph->edges));
         $output->writeln('');
 
-        if (!empty($result->diagnostics)) {
+        if ($result->diagnostics !== []) {
             $output->writeln('<fg=yellow;options=bold>Diagnostics:</>');
             foreach ($result->diagnostics as $diagnostic) {
                 $prefix = match ($diagnostic->severity->value) {

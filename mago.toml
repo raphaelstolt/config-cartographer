@@ -1,0 +1,19 @@
+#:schema vendor/carthage-software/mago/schema.json
+
+version = "1"
+php-version = "8.3"
+
+[source]
+workspace = "."
+paths = ["src/"]
+includes = ["vendor"]
+excludes = []
+
+[linter]
+integrations = ["phpunit"]
+
+[linter.rules]
+cyclomatic-complexity = { enabled = true, threshold = 50 }
+kan-defect = { enabled = true, threshold = 10 }
+excessive-parameter-list = { enabled = true, threshold = 10 }
+too-many-methods = { enabled = true, threshold = 20 }

@@ -13,7 +13,6 @@ use ConfigCartographer\Domain\DiagnosticSeverity;
 use ConfigCartographer\Domain\Edge;
 use ConfigCartographer\Domain\EdgeKind;
 use ConfigCartographer\Domain\Node;
-use ConfigCartographer\Domain\NodeKind;
 use ConfigCartographer\Domain\SourceLocation;
 use PhpParser\Node as PhpNode;
 use PhpParser\NodeTraverser;
@@ -178,9 +177,7 @@ final class LaravelConfigCollector implements CollectorInterface
         $path = preg_replace('/\.php$/', '', $path);
 
         // Convert path separators to dots for nested config files
-        $prefix = str_replace(['/', '\\'], '.', $path);
-
-        return $prefix;
+        return str_replace(['/', '\\'], '.', $path);
     }
 
     private function relativePath(string $file, string $projectRoot): string
@@ -264,7 +261,7 @@ final class EnvHelperVisitor extends NodeVisitorAbstract
     {
         // Pop the key path when leaving an array item
         if ($node instanceof PhpNode\Expr\ArrayItem) {
-            if (!empty($this->keyPath)) {
+            if ($this->keyPath !== []) {
                 array_pop($this->keyPath);
             }
         }
@@ -278,7 +275,7 @@ final class EnvHelperVisitor extends NodeVisitorAbstract
      */
     private function buildConfigKey(): string
     {
-        if (empty($this->keyPath)) {
+        if ($this->keyPath === []) {
             return $this->configPrefix;
         }
 

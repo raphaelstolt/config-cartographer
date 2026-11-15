@@ -166,7 +166,7 @@ class TraceCommand extends Command
         $output->writeln('<fg=gray>Kind: ' . $trace['kind'] . '</>');
         $output->writeln('');
 
-        if (!empty($trace['declarations'])) {
+        if ($trace['declarations'] !== []) {
             $output->writeln('<fg=green;options=bold>Declarations:</>');
             foreach ($trace['declarations'] as $decl) {
                 $loc = $decl['file'] . ($decl['line'] !== null ? ':' . $decl['line'] : '');
@@ -175,7 +175,7 @@ class TraceCommand extends Command
             $output->writeln('');
         }
 
-        if (!empty($trace['config_keys'])) {
+        if ($trace['config_keys'] !== []) {
             $output->writeln('<fg=yellow;options=bold>Configuration keys:</>');
             foreach ($trace['config_keys'] as $key) {
                 $loc = $key['file'] . ($key['line'] !== null ? ':' . $key['line'] : '');
@@ -184,7 +184,7 @@ class TraceCommand extends Command
             $output->writeln('');
         }
 
-        if (!empty($trace['references'])) {
+        if ($trace['references'] !== []) {
             $output->writeln('<fg=magenta;options=bold>PHP references:</>');
             foreach ($trace['references'] as $ref) {
                 $loc = $ref['file'] . ($ref['line'] !== null ? ':' . $ref['line'] : '');
@@ -194,7 +194,7 @@ class TraceCommand extends Command
             $output->writeln('');
         }
 
-        if (empty($trace['declarations']) && empty($trace['config_keys']) && empty($trace['references'])) {
+        if ($trace['declarations'] === [] && $trace['config_keys'] === [] && $trace['references'] === []) {
             $output->writeln('<comment>No references found for this variable.</>');
             $output->writeln('');
         }

@@ -132,7 +132,7 @@ final class DependencyGraph
         $queue = [$startNodeId];
         $seen = [$startNodeId => true];
 
-        while (!empty($queue)) {
+        while ($queue !== []) {
             $currentId = array_shift($queue);
             $node = $this->nodes[$currentId] ?? null;
             if ($node !== null) {

@@ -106,7 +106,7 @@ class GraphCommand extends Command
         }
 
         foreach ($graph->edges as $edge) {
-            if (isset($idSet[$edge->sourceId]) && isset($idSet[$edge->targetId])) {
+            if (isset($idSet[$edge->sourceId], $idSet[$edge->targetId])) {
                 $newGraph = $newGraph->withEdge($edge);
             }
         }

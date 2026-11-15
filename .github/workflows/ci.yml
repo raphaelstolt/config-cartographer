@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-interaction
 
+      - name: Run Mago code style linting
+        run: composer cs-lint
+
       - name: Run unit tests
         run: composer unit-test
 

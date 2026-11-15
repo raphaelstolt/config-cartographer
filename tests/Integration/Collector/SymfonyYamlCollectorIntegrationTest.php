@@ -20,7 +20,7 @@ class SymfonyYamlCollectorIntegrationTest extends TestCase
         $nodes = $result->graph->sortedNodes();
         
         // Should find DATABASE_URL, APP_SECRET, APP_DEBUG references
-        $nodeIds = array_map(fn($node) => $node->id, $nodes);
+        $nodeIds = array_map(static fn($node) => $node->id, $nodes);
         $this->assertContains('env:DATABASE_URL', $nodeIds);
         $this->assertContains('env:APP_SECRET', $nodeIds);
         $this->assertContains('env:APP_DEBUG', $nodeIds);
@@ -40,7 +40,7 @@ class SymfonyYamlCollectorIntegrationTest extends TestCase
         // At least one edge should be MapsTo type
         $mapsToEdges = array_filter(
             $edges,
-            fn($edge) => $edge->kind->value === 'maps_to'
+            static fn($edge) => $edge->kind->value === 'maps_to'
         );
         $this->assertGreaterThan(0, count($mapsToEdges));
     }
@@ -66,7 +66,7 @@ class SymfonyYamlCollectorIntegrationTest extends TestCase
         $result = $collector->collect($fixturePath);
 
         $nodes = $result->graph->sortedNodes();
-        $nodeIds = array_map(fn($node) => $node->id, $nodes);
+        $nodeIds = array_map(static fn($node) => $node->id, $nodes);
         
         // APP_SECRET from valid.yaml should be found
         $this->assertContains('env:APP_SECRET', $nodeIds);

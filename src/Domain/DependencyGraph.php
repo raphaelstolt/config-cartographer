@@ -73,7 +73,7 @@ final class DependencyGraph
     public function sortedNodes(): array
     {
         $nodes = array_values($this->nodes);
-        usort($nodes, fn (Node $a, Node $b) => $a->id <=> $b->id);
+        usort($nodes, static fn (Node $a, Node $b) => $a->id <=> $b->id);
         return $nodes;
     }
 
@@ -84,7 +84,7 @@ final class DependencyGraph
     public function sortedEdges(): array
     {
         $edges = array_values($this->edges);
-        usort($edges, fn (Edge $a, Edge $b) => $a->hash() <=> $b->hash());
+        usort($edges, static fn (Edge $a, Edge $b) => $a->hash() <=> $b->hash());
         return $edges;
     }
 
@@ -104,7 +104,7 @@ final class DependencyGraph
     {
         return array_values(array_filter(
             $this->edges,
-            fn (Edge $e) => $e->sourceId === $nodeId
+            static fn (Edge $e) => $e->sourceId === $nodeId
         ));
     }
 
@@ -116,7 +116,7 @@ final class DependencyGraph
     {
         return array_values(array_filter(
             $this->edges,
-            fn (Edge $e) => $e->targetId === $nodeId
+            static fn (Edge $e) => $e->targetId === $nodeId
         ));
     }
 
@@ -158,7 +158,7 @@ final class DependencyGraph
         $data = [
             'version' => '0.1',
             'nodes' => array_map(
-                fn (Node $n) => [
+                static fn (Node $n) => [
                     'id' => $n->id,
                     'kind' => $n->kind->value,
                     'name' => $n->name,
@@ -169,7 +169,7 @@ final class DependencyGraph
                 $this->sortedNodes()
             ),
             'edges' => array_map(
-                fn (Edge $e) => [
+                static fn (Edge $e) => [
                     'source' => $e->sourceId,
                     'target' => $e->targetId,
                     'kind' => $e->kind->value,

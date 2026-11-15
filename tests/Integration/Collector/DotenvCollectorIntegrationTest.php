@@ -27,7 +27,7 @@ class DotenvCollectorIntegrationTest extends TestCase
         // Should find DATABASE_URL, APP_SECRET, APP_DEBUG
         $this->assertGreaterThanOrEqual(3, count($nodes));
         
-        $nodeIds = array_map(fn($node) => $node->id, $nodes);
+        $nodeIds = array_map(static fn($node) => $node->id, $nodes);
         $this->assertContains('env:DATABASE_URL', $nodeIds);
         $this->assertContains('env:APP_SECRET', $nodeIds);
         $this->assertContains('env:APP_DEBUG', $nodeIds);
@@ -58,7 +58,7 @@ class DotenvCollectorIntegrationTest extends TestCase
         // Should handle duplicates - DATABASE_URL appears twice but should be deduplicated
         $databaseUrlNodes = array_filter(
             $nodes,
-            fn($node) => $node->id === 'env:DATABASE_URL'
+            static fn($node) => $node->id === 'env:DATABASE_URL'
         );
         
         // Only one node per unique ID

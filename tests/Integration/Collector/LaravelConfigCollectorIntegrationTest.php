@@ -20,7 +20,7 @@ class LaravelConfigCollectorIntegrationTest extends TestCase
         $nodes = $result->graph->sortedNodes();
 
         // Should find DB_HOST, DB_DATABASE, APP_NAME, MAIL_HOST references
-        $nodeIds = array_map(fn($node) => $node->id, $nodes);
+        $nodeIds = array_map(static fn($node) => $node->id, $nodes);
         $this->assertContains('env:DB_HOST', $nodeIds);
         $this->assertContains('env:DB_DATABASE', $nodeIds);
         $this->assertContains('env:APP_NAME', $nodeIds);
@@ -34,7 +34,7 @@ class LaravelConfigCollectorIntegrationTest extends TestCase
         $result = $collector->collect($fixturePath);
 
         $nodes = $result->graph->sortedNodes();
-        $nodeIds = array_map(fn($node) => $node->id, $nodes);
+        $nodeIds = array_map(static fn($node) => $node->id, $nodes);
 
         // Should find nested config keys like database.connections.mysql.host
         $this->assertContains('config:database.connections.mysql.host', $nodeIds);
@@ -101,7 +101,7 @@ class LaravelConfigCollectorIntegrationTest extends TestCase
         // Config key nodes should have source locations
         $configNodes = array_filter(
             $nodes,
-            fn($node) => str_starts_with($node->id, 'config:')
+            static fn($node) => str_starts_with($node->id, 'config:')
         );
 
         foreach ($configNodes as $node) {
@@ -118,7 +118,7 @@ class LaravelConfigCollectorIntegrationTest extends TestCase
         $result = $collector->collect($fixturePath);
 
         $nodes = $result->graph->sortedNodes();
-        $nodeIds = array_map(fn($node) => $node->id, $nodes);
+        $nodeIds = array_map(static fn($node) => $node->id, $nodes);
 
         // All MySQL connection config keys should be present
         $this->assertContains('config:database.default', $nodeIds);

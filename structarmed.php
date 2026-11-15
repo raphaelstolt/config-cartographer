@@ -7,6 +7,7 @@ use Boundwize\StructArmed\Preset\Preset;
 
 return Architecture::define()
     ->withPresets(Preset::PSR4(), Preset::CODEQUALITY(), Preset::YAGNI())
+    ->skipPaths(['spec/', 'tests/'])
     ->layer('Domain', 'src/Domain/')
     ->layer('Collector', 'src/Collector/')
     ->layer('Command', 'src/Command/')

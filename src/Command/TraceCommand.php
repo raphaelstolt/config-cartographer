@@ -153,7 +153,7 @@ class TraceCommand extends Command
             'references' => $references,
             'config_keys' => $configKeys,
             'diagnostics' => array_map(
-                fn ($d) => ['message' => $d->message, 'severity' => $d->severity->value],
+                static fn ($d) => ['message' => $d->message, 'severity' => $d->severity->value],
                 $result->diagnostics
             ),
         ];

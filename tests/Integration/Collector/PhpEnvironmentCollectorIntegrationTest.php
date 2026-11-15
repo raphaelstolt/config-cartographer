@@ -18,7 +18,7 @@ class PhpEnvironmentCollectorIntegrationTest extends TestCase
         $result = $collector->collect($fixturePath);
 
         $nodes = $result->graph->sortedNodes();
-        $nodeIds = array_map(fn($node) => $node->id, $nodes);
+        $nodeIds = array_map(static fn($node) => $node->id, $nodes);
 
         // Should find DB_HOST, DB_PORT, APP_DEBUG references
         $this->assertContains('php:DB_HOST', $nodeIds);
@@ -34,7 +34,7 @@ class PhpEnvironmentCollectorIntegrationTest extends TestCase
 
         // Should find static references
         $nodes = $result->graph->sortedNodes();
-        $nodeIds = array_map(fn($node) => $node->id, $nodes);
+        $nodeIds = array_map(static fn($node) => $node->id, $nodes);
         
         // APP_SECRET is static access
         $this->assertContains('php:APP_SECRET', $nodeIds);

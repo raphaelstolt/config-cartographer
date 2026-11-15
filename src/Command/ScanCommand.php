@@ -118,7 +118,7 @@ class ScanCommand extends Command
             ],
             'graph' => json_decode($result->graph->toJson(), true),
             'diagnostics' => array_map(
-                fn ($d) => [
+                static fn ($d) => [
                     'message' => $d->message,
                     'severity' => $d->severity->value,
                     'source_location' => $d->sourceLocation !== null

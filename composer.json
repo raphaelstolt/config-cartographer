@@ -20,6 +20,7 @@
         "nikic/php-parser": "^5.0"
     },
     "require-dev": {
+        "boundwize/structarmed": "^0.21.18",
         "carthage-software/mago": "^1.60",
         "phpspec/phpspec": "^9.0@RC",
         "phpstan/phpstan": "^2.3",
@@ -49,7 +50,8 @@
         "lint": "php -l src/**/*.php",
         "cs-lint": "mago lint",
         "static-analysis": "phpstan analyse",
-        "validate-gitattributes": "php-lean lint"
+        "validate-gitattributes": "php-lean lint",
+        "architecture-analyse": "structarmed analyse"
     },
     "config": {
         "sort-packages": true

@@ -39,6 +39,9 @@ jobs:
       - name: Validate .gitattributes
         run: composer validate-gitattributes
 
+      - name: Run architecture analysis
+        run: composer architecture-analyse
+
       - name: Run unit tests
         run: composer unit-test
 

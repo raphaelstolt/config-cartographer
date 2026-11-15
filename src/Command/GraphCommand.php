@@ -129,7 +129,7 @@ class GraphCommand extends Command
             $safeId = $this->safeMermaidId($node->id);
             $usedIds[$node->id] = $safeId;
 
-            $shape = $nodeShapes[$node->kind->value] ?? '[]';
+            $shape = $nodeShapes[$node->kind->value];
             $label = $this->escapeMermaidLabel($node->name);
             $lines[] = "    {$safeId}{$shape} \"{$label}\"";
         }
@@ -145,7 +145,6 @@ class GraphCommand extends Command
                 'declared_in' => '-->',
                 'references' => '.->',
                 'maps_to' => '==>',
-                default => '-->',
             };
 
             $label = $edge->confidence->value;

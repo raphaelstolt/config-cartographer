@@ -111,22 +111,22 @@ class TraceCommand extends Command
         foreach ($result->graph->outgoingEdges($node->id) as $edge) {
             if ($edge->kind->value === 'declared_in') {
                 $declarations[] = [
-                    'file' => $edge->evidence?->file ?? 'unknown',
-                    'line' => $edge->evidence?->line,
+                    'file' => $edge->evidence->file ?? 'unknown',
+                    'line' => $edge->evidence->line,
                     'confidence' => $edge->confidence->value,
                 ];
             } elseif ($edge->kind->value === 'maps_to') {
                 $targetNode = $result->graph->getNode($edge->targetId);
                 $configKeys[] = [
-                    'key' => $targetNode?->name ?? $edge->targetId,
-                    'file' => $edge->evidence?->file ?? 'unknown',
-                    'line' => $edge->evidence?->line,
+                    'key' => $targetNode->name ?? $edge->targetId,
+                    'file' => $edge->evidence->file ?? 'unknown',
+                    'line' => $edge->evidence->line,
                     'confidence' => $edge->confidence->value,
                 ];
             } elseif ($edge->kind->value === 'references') {
                 $references[] = [
-                    'file' => $edge->evidence?->file ?? 'unknown',
-                    'line' => $edge->evidence?->line,
+                    'file' => $edge->evidence->file ?? 'unknown',
+                    'line' => $edge->evidence->line,
                     'confidence' => $edge->confidence->value,
                     'description' => $edge->description,
                 ];
@@ -138,8 +138,8 @@ class TraceCommand extends Command
             $sourceNode = $result->graph->getNode($edge->sourceId);
             if ($sourceNode?->kind->value === 'php_reference') {
                 $references[] = [
-                    'file' => $edge->evidence?->file ?? 'unknown',
-                    'line' => $edge->evidence?->line,
+                    'file' => $edge->evidence->file ?? 'unknown',
+                    'line' => $edge->evidence->line,
                     'confidence' => $edge->confidence->value,
                     'description' => $edge->description,
                 ];

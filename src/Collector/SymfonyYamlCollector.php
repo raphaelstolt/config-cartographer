@@ -16,7 +16,7 @@ use ConfigCartographer\Domain\Node;
 use ConfigCartographer\Domain\SourceLocation;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
-use Symfony\Component\Yaml\YamlException;
+use Symfony\Component\Yaml\Exception\ParseException;
 
 /**
  * Discovers %env(...)% references in Symfony YAML configuration files.
@@ -57,7 +57,7 @@ final class SymfonyYamlCollector implements CollectorInterface
                 );
                 $graph = $newGraph;
                 $diagnostics = [...$diagnostics, ...$fileDiagnostics];
-            } catch (YamlException $e) {
+            } catch (ParseException $e) {
                 $relativePath = $this->relativePath($file, $projectRoot);
                 $diagnostics[] = new Diagnostic(
                     "Invalid YAML in {$relativePath}: {$e->getMessage()}",

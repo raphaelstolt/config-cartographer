@@ -33,6 +33,9 @@ jobs:
       - name: Run Mago code style linting
         run: composer cs-lint
 
+      - name: Run PHPStan static analysis
+        run: composer static-analysis
+
       - name: Run unit tests
         run: composer unit-test
 

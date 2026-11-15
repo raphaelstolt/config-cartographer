@@ -23,11 +23,6 @@ use Symfony\Component\Finder\Finder;
 final class DotenvCollector implements CollectorInterface
 {
     /**
-     * Default .env file patterns to discover.
-     */
-    private const DEFAULT_PATTERNS = ['.env', '.env.example'];
-
-    /**
      * Directories to exclude by default.
      */
     private const EXCLUDED_DIRS = ['vendor', 'var', 'cache', 'tmp', '.git'];

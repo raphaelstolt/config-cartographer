@@ -110,7 +110,7 @@ final class PhpEnvironmentCollector implements CollectorInterface
             return [$graph, $diagnostics];
         }
 
-        $visitor = new EnvironmentAccessVisitor($relativePath);
+        $visitor = new EnvironmentAccessVisitor();
         $traverser = new NodeTraverser();
         $traverser->addVisitor($visitor);
         $traverser->traverse($ast);
@@ -161,11 +161,6 @@ final class EnvironmentAccessVisitor extends NodeVisitorAbstract
      * @var array<int, array{line: int, name: string, type: string, resolved: bool}>
      */
     private array $references = [];
-
-    public function __construct(
-        private readonly string $relativePath
-    ) {
-    }
 
     /**
      * @return array<int, array{line: int, name: string, type: string, resolved: bool}>

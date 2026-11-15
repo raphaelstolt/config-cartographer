@@ -15,6 +15,7 @@
     "require-dev": {
         "carthage-software/mago": "^1.60",
         "phpspec/phpspec": "^9.0@RC",
+        "phpstan/phpstan": "^2.3",
         "phpunit/phpunit": "^11.0",
         "zenstruck/console-test": "^1.8"
     },
@@ -37,7 +38,8 @@
         "integration-test": "phpunit",
         "test": ["@unit-test", "@integration-test"],
         "lint": "php -l src/**/*.php",
-        "cs-lint": "mago lint"
+        "cs-lint": "mago lint",
+        "static-analysis": "phpstan analyse"
     },
     "config": {
         "sort-packages": true

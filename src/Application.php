@@ -15,8 +15,8 @@ class Application extends SymfonyApplication
     {
         parent::__construct('config-cartographer', '0.1.0-dev');
 
-        $this->add(new ScanCommand());
-        $this->add(new TraceCommand());
-        $this->add(new GraphCommand());
+        $this->addCommand(new ScanCommand());
+        $this->addCommand(new TraceCommand());
+        $this->addCommand(new GraphCommand());
     }
 }

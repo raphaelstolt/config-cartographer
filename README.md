@@ -1,13 +1,13 @@
 # config-cartographer
 
-Discover, trace, and visualize application configuration dependencies across PHP projects.
+Discover, trace, and visualise application configuration dependencies across PHP projects.
 
 ## Why?
 
 PHP applications scatter configuration across multiple layers: `.env` files declare variables, framework config files
 reference them, and application code reads them through `getenv()`, `$_ENV`, or framework helpers. When a value
-changes — or when onboarding to an unfamiliar codebase — it's difficult to answer: *"Where is this variable used,
-and what breaks if I change it?"*
+changes — or when onboarding to an unfamiliar codebase — it's challenging to answer: _"Where is this variable used,
+and what breaks if I change it?"_
 
 `config-cartographer` statically maps these cross-layer relationships with source-level evidence. It never executes
 the target application, never exposes secret values, and never claims complete runtime knowledge — only what static
@@ -133,22 +133,22 @@ All commands support these common options:
 
 ## Confidence Levels
 
-- **observed**: Directly found in source code (e.g., `getenv('DATABASE_URL')`)
-- **inferred**: Derived from context (e.g., YAML structure analysis)
-- **unresolved**: Dynamic or computed reference where the target cannot be determined statically
+- __observed__: Directly found in source code (e.g., `getenv('DATABASE_URL')`)
+- __inferred__: Derived from context (e.g. YAML structure analysis)
+- __unresolved__: Dynamic or computed reference where the target cannot be determined statically
 
 ## Security Model
 
-- **Never executes** the target application during analysis
-- **Never displays, persists, or exports** secret values — only variable names, file paths, reference types, and
+- __Never executes__ the target application during analysis
+- __Never displays, persists, or exports__ secret values — only variable names, file paths, reference types, and
   source locations
-- **Symlink-safe**: refuses to follow symlinks that escape the project root
-- **Excludes** `vendor/`, `var/`, `cache/`, `tmp/`, `.git/` by default
+- __Symlink-safe__: refuses to follow symlinks that escape the project root
+- __Excludes__ `vendor/`, `var/`, `cache/`, `tmp/`, `.git/` by default
 
 ## Limitations
 
 - Does not resolve YAML imports or execute framework code
-- Does not analyze the compiled Symfony container
+- Does not analyse the compiled Symfony container
 - Not a general-purpose unused-variable detector
 - Static analysis cannot claim complete runtime dependency knowledge
 

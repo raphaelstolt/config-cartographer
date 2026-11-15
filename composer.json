@@ -1,6 +1,12 @@
 {
     "name": "stolt/config-cartographer",
     "description": "A PHP library and CLI for discovering, tracing, and visualizing application configuration dependencies.",
+    "keywords": [
+        "configuration",
+        "static-analysis",
+        "dependency-graph",
+        "environment-variables"
+    ],
     "type": "library",
     "license": "MIT",
     "minimum-stability": "stable",

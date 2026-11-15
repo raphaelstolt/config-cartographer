@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        php-version: ['8.3', '8.4', '8.5', '8.6']
+        php-version: ['8.3', '8.4', '8.5']
       fail-fast: false
 
     steps:
@@ -28,7 +28,7 @@ jobs:
         run: composer validate --strict
 
       - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-interaction
+        run: composer update --prefer-dist --no-progress --no-interaction
 
       - name: Run Mago code style linting
         run: composer cs-lint

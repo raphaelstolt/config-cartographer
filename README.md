@@ -108,6 +108,33 @@ php bin/config-cartographer graph --variable=DB_HOST
 php bin/config-cartographer graph --format=json
 ```
 
+Example Mermaid output:
+
+```mermaid
+flowchart TD
+    config_dbal[CONFIG] "dbal"
+    config_framework[CONFIG] "framework"
+    config_secret[CONFIG] "secret"
+    env_APP_DEBUG([ENV]) "APP_DEBUG"
+    env_APP_ENV([ENV]) "APP_ENV"
+    env_APP_SECRET([ENV]) "APP_SECRET"
+    env_DATABASE_URL([ENV]) "DATABASE_URL"
+    env_DB_HOST([ENV]) "DB_HOST"
+    env_DB_PORT([ENV]) "DB_PORT"
+    php_APP_DEBUG(PHP) "APP_DEBUG"
+    php_DB_HOST(PHP) "DB_HOST"
+    php_DB_PORT(PHP) "DB_PORT"
+    env_DATABASE_URL ==>| observed | config_dbal
+    env_DATABASE_URL -->| observed | env_DATABASE_URL
+    env_APP_ENV -->| observed | env_APP_ENV
+    php_APP_DEBUG .->| observed | env_APP_DEBUG
+    env_APP_SECRET -->| observed | env_APP_SECRET
+    php_DB_HOST .->| observed | env_DB_HOST
+    env_APP_DEBUG ==>| observed | config_secret
+    php_DB_PORT .->| observed | env_DB_PORT
+    env_APP_SECRET ==>| observed | config_framework
+```
+
 ## Options and flags
 
 All commands support these common options:

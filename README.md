@@ -152,6 +152,17 @@ All commands support these common options:
 - Not a general-purpose unused-variable detector
 - Static analysis cannot claim complete runtime dependency knowledge
 
+## AI disclaimer
+
+This package is developed with the assistance of Artificial Intelligence (AI). AI tools are used throughout the
+development process, including code generation, documentation, testing, and maintenance.
+
+While reasonable care is taken to review and validate AI-generated contributions, AI-generated code is not inherently
+correct, secure, or free of defects. All contributions remain subject to human review and project quality standards.
+
+As with any software, use this package at your own risk. No guarantee is made regarding its fitness for a particular
+purpose, and the maintainers assume no liability for damages resulting from its use.
+
 ## Contributing
 
 If you're considering contributing to this project, have a look at this repository's

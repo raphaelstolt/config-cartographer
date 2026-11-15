@@ -21,7 +21,7 @@ class GraphCommandIntegrationTest extends TestCase
 
     public function test_graph_mermaid_output_is_valid(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/symfony-app';
+        $fixturePath = __DIR__ . '/../../fixtures/symfony-app';
 
         TestCommand::from($this->application, "graph --path={$fixturePath} --format=mermaid")
             ->execute()
@@ -31,7 +31,7 @@ class GraphCommandIntegrationTest extends TestCase
 
     public function test_graph_json_output_is_valid(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/symfony-app';
+        $fixturePath = __DIR__ . '/../../fixtures/symfony-app';
 
         $result = TestCommand::from($this->application, "graph --path={$fixturePath} --format=json")
             ->execute()
@@ -43,7 +43,7 @@ class GraphCommandIntegrationTest extends TestCase
 
     public function test_graph_variable_filter_works(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/symfony-app';
+        $fixturePath = __DIR__ . '/../../fixtures/symfony-app';
 
         TestCommand::from($this->application, "graph --path={$fixturePath} --variable=DATABASE_URL")
             ->execute()
@@ -53,7 +53,7 @@ class GraphCommandIntegrationTest extends TestCase
 
     public function test_graph_output_is_deterministic(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/symfony-app';
+        $fixturePath = __DIR__ . '/../../fixtures/symfony-app';
         $command = "graph --path={$fixturePath} --format=json";
 
         $result1 = TestCommand::from($this->application, $command)->execute()->assertSuccessful();
@@ -64,7 +64,7 @@ class GraphCommandIntegrationTest extends TestCase
 
     public function test_graph_secret_values_not_in_output(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/symfony-app';
+        $fixturePath = __DIR__ . '/../../fixtures/symfony-app';
 
         TestCommand::from($this->application, "graph --path={$fixturePath} --format=json")
             ->execute()

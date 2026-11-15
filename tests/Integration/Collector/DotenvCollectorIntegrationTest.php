@@ -18,7 +18,7 @@ class DotenvCollectorIntegrationTest extends TestCase
 
     public function test_collects_env_file_from_minimal_app(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/minimal-app';
+        $fixturePath = __DIR__ . '/../../fixtures/minimal-app';
         $collector = new DotenvCollector();
         $result = $collector->collect($fixturePath);
 
@@ -35,7 +35,7 @@ class DotenvCollectorIntegrationTest extends TestCase
 
     public function test_secret_values_never_appear_in_output(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/minimal-app';
+        $fixturePath = __DIR__ . '/../../fixtures/minimal-app';
         $collector = new DotenvCollector();
         $result = $collector->collect($fixturePath);
 
@@ -49,7 +49,7 @@ class DotenvCollectorIntegrationTest extends TestCase
 
     public function test_handles_duplicate_keys(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/duplicate-env';
+        $fixturePath = __DIR__ . '/../../fixtures/duplicate-env';
         $collector = new DotenvCollector();
         $result = $collector->collect($fixturePath);
 
@@ -67,7 +67,7 @@ class DotenvCollectorIntegrationTest extends TestCase
 
     public function test_diagnostics_do_not_leak_secrets(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/minimal-app';
+        $fixturePath = __DIR__ . '/../../fixtures/minimal-app';
         $collector = new DotenvCollector();
         $result = $collector->collect($fixturePath);
 

@@ -13,7 +13,7 @@ class PhpEnvironmentCollectorIntegrationTest extends TestCase
 {
     public function test_finds_static_env_references(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/symfony-app';
+        $fixturePath = __DIR__ . '/../../fixtures/symfony-app';
         $collector = new PhpEnvironmentCollector();
         $result = $collector->collect($fixturePath);
 
@@ -28,7 +28,7 @@ class PhpEnvironmentCollectorIntegrationTest extends TestCase
 
     public function test_marks_dynamic_access_as_unresolved(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/dynamic-php';
+        $fixturePath = __DIR__ . '/../../fixtures/dynamic-php';
         $collector = new PhpEnvironmentCollector();
         $result = $collector->collect($fixturePath);
 

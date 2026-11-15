@@ -13,7 +13,7 @@ class SymfonyYamlCollectorIntegrationTest extends TestCase
 {
     public function test_collects_env_references_from_symfony_app(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/symfony-app';
+        $fixturePath = __DIR__ . '/../../fixtures/symfony-app';
         $collector = new SymfonyYamlCollector();
         $result = $collector->collect($fixturePath);
 
@@ -28,7 +28,7 @@ class SymfonyYamlCollectorIntegrationTest extends TestCase
 
     public function test_maps_env_to_config_keys(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/symfony-app';
+        $fixturePath = __DIR__ . '/../../fixtures/symfony-app';
         $collector = new SymfonyYamlCollector();
         $result = $collector->collect($fixturePath);
 
@@ -47,7 +47,7 @@ class SymfonyYamlCollectorIntegrationTest extends TestCase
 
     public function test_handles_malformed_yaml_gracefully(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/malformed-files';
+        $fixturePath = __DIR__ . '/../../fixtures/malformed-files';
         $collector = new SymfonyYamlCollector();
         $result = $collector->collect($fixturePath);
 
@@ -61,7 +61,7 @@ class SymfonyYamlCollectorIntegrationTest extends TestCase
 
     public function test_valid_files_processed_with_malformed(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/malformed-files';
+        $fixturePath = __DIR__ . '/../../fixtures/malformed-files';
         $collector = new SymfonyYamlCollector();
         $result = $collector->collect($fixturePath);
 

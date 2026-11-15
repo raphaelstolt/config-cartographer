@@ -13,7 +13,7 @@ class LaravelConfigCollectorIntegrationTest extends TestCase
 {
     public function test_collects_env_references_from_laravel_app(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/laravel-app';
+        $fixturePath = __DIR__ . '/../../fixtures/laravel-app';
         $collector = new LaravelConfigCollector();
         $result = $collector->collect($fixturePath);
 
@@ -29,7 +29,7 @@ class LaravelConfigCollectorIntegrationTest extends TestCase
 
     public function test_maps_env_to_config_keys_with_nested_paths(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/laravel-app';
+        $fixturePath = __DIR__ . '/../../fixtures/laravel-app';
         $collector = new LaravelConfigCollector();
         $result = $collector->collect($fixturePath);
 
@@ -52,7 +52,7 @@ class LaravelConfigCollectorIntegrationTest extends TestCase
 
     public function test_creates_reference_edges(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/laravel-app';
+        $fixturePath = __DIR__ . '/../../fixtures/laravel-app';
         $collector = new LaravelConfigCollector();
         $result = $collector->collect($fixturePath);
 
@@ -69,7 +69,7 @@ class LaravelConfigCollectorIntegrationTest extends TestCase
 
     public function test_no_secret_values_in_output(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/laravel-app';
+        $fixturePath = __DIR__ . '/../../fixtures/laravel-app';
         $collector = new LaravelConfigCollector();
         $result = $collector->collect($fixturePath);
 
@@ -81,7 +81,7 @@ class LaravelConfigCollectorIntegrationTest extends TestCase
 
     public function test_handles_project_without_config_dir(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/minimal-app';
+        $fixturePath = __DIR__ . '/../../fixtures/minimal-app';
         $collector = new LaravelConfigCollector();
         $result = $collector->collect($fixturePath);
 
@@ -92,7 +92,7 @@ class LaravelConfigCollectorIntegrationTest extends TestCase
 
     public function test_source_locations_point_to_config_files(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/laravel-app';
+        $fixturePath = __DIR__ . '/../../fixtures/laravel-app';
         $collector = new LaravelConfigCollector();
         $result = $collector->collect($fixturePath);
 
@@ -113,7 +113,7 @@ class LaravelConfigCollectorIntegrationTest extends TestCase
 
     public function test_db_connection_config_keys(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/laravel-app';
+        $fixturePath = __DIR__ . '/../../fixtures/laravel-app';
         $collector = new LaravelConfigCollector();
         $result = $collector->collect($fixturePath);
 

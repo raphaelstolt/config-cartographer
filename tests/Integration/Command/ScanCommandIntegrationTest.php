@@ -21,7 +21,7 @@ class ScanCommandIntegrationTest extends TestCase
 
     public function test_scan_minimal_app_shows_counts(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/minimal-app';
+        $fixturePath = __DIR__ . '/../../fixtures/minimal-app';
 
         TestCommand::from($this->application, "scan --path={$fixturePath}")
             ->execute()
@@ -31,7 +31,7 @@ class ScanCommandIntegrationTest extends TestCase
 
     public function test_scan_json_output_is_valid(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/minimal-app';
+        $fixturePath = __DIR__ . '/../../fixtures/minimal-app';
 
         $result = TestCommand::from($this->application, "scan --path={$fixturePath} --format=json")
             ->execute()
@@ -51,7 +51,7 @@ class ScanCommandIntegrationTest extends TestCase
 
     public function test_scan_secret_values_not_in_output(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/minimal-app';
+        $fixturePath = __DIR__ . '/../../fixtures/minimal-app';
 
         TestCommand::from($this->application, "scan --path={$fixturePath} --format=json")
             ->execute()

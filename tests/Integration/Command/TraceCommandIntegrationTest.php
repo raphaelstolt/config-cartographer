@@ -21,7 +21,7 @@ class TraceCommandIntegrationTest extends TestCase
 
     public function test_trace_database_url_shows_references(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/symfony-app';
+        $fixturePath = __DIR__ . '/../../fixtures/symfony-app';
 
         TestCommand::from($this->application, "trace DATABASE_URL --path={$fixturePath}")
             ->execute()
@@ -31,7 +31,7 @@ class TraceCommandIntegrationTest extends TestCase
 
     public function test_trace_missing_variable_returns_error(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/minimal-app';
+        $fixturePath = __DIR__ . '/../../fixtures/minimal-app';
 
         TestCommand::from($this->application, "trace NONEXISTENT_VAR --path={$fixturePath}")
             ->execute()
@@ -40,7 +40,7 @@ class TraceCommandIntegrationTest extends TestCase
 
     public function test_trace_json_output_is_valid(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/symfony-app';
+        $fixturePath = __DIR__ . '/../../fixtures/symfony-app';
 
         $result = TestCommand::from($this->application, "trace DATABASE_URL --path={$fixturePath} --format=json")
             ->execute()
@@ -52,7 +52,7 @@ class TraceCommandIntegrationTest extends TestCase
 
     public function test_trace_secret_values_not_in_output(): void
     {
-        $fixturePath = __DIR__ . '/../../Fixtures/symfony-app';
+        $fixturePath = __DIR__ . '/../../fixtures/symfony-app';
 
         TestCommand::from($this->application, "trace APP_SECRET --path={$fixturePath} --format=json")
             ->execute()

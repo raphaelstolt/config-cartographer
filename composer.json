@@ -5,7 +5,8 @@
         "configuration",
         "static-analysis",
         "dependency-graph",
-        "environment-variables"
+        "environment-variables",
+        "dev"
     ],
     "type": "library",
     "license": "MIT",

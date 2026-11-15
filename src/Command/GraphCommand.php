@@ -119,9 +119,9 @@ class GraphCommand extends Command
         $lines = ['flowchart TD'];
 
         $nodeShapes = [
-            'environment_variable' => '([ENV])',
-            'configuration_key' => '[CONFIG]',
-            'php_reference' => '(PHP)',
+            'environment_variable' => '([%s])',
+            'configuration_key' => '[%s]',
+            'php_reference' => '(%s)',
         ];
 
         $usedIds = [];
@@ -129,9 +129,10 @@ class GraphCommand extends Command
             $safeId = $this->safeMermaidId($node->id);
             $usedIds[$node->id] = $safeId;
 
-            $shape = $nodeShapes[$node->kind->value];
+            $shapeTemplate = $nodeShapes[$node->kind->value];
             $label = $this->escapeMermaidLabel($node->name);
-            $lines[] = "    {$safeId}{$shape} \"{$label}\"";
+            $shape = sprintf($shapeTemplate, $label);
+            $lines[] = "    {$safeId}{$shape}";
         }
 
         foreach ($graph->sortedEdges() as $edge) {
@@ -148,7 +149,7 @@ class GraphCommand extends Command
             };
 
             $label = $edge->confidence->value;
-            $lines[] = "    {$sourceId} {$arrow}| {$label} | {$targetId}";
+            $lines[] = "    {$sourceId} {$arrow}|{$label}| {$targetId}";
         }
 
         return implode("\n", $lines) . "\n";

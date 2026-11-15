@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "692fe2e7d890f9aa9346627cdf0b9239",
+    "content-hash": "6dd8d88f247351de80e0bcf0d045a56e",
     "packages": [
         {
             "name": "nikic/php-parser",
@@ -3275,6 +3275,60 @@
             ],
             "time": "2024-10-20T05:08:20+00:00",
             "published-time": "2024-10-20T05:09:39+00:00"
+        },
+        {
+            "name": "stolt/composer-peel",
+            "version": "v4.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lean-packages/composer-peel.git",
+                "reference": "1d1c703ce5344a8545dee0e21033c54fbddbff5d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lean-packages/composer-peel/zipball/1d1c703ce5344a8545dee0e21033c54fbddbff5d",
+                "reference": "1d1c703ce5344a8545dee0e21033c54fbddbff5d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "sebastian/diff": "^6.0 || ^7.0 || ^8.0 || ^9.0",
+                "symfony/console": "^7.4 || ^8.1"
+            },
+            "bin": [
+                "bin/composer-peel"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stolt\\ComposerPeel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Raphael Stolt",
+                    "email": "raphael.stolt@gmail.com"
+                }
+            ],
+            "description": "A small development tool to strip development-only metadata from composer.json when preparing PHP packages for distribution.",
+            "keywords": [
+                "composer.json",
+                "dev",
+                "reduce",
+                "release management",
+                "runtime-only metadata",
+                "strip development-only metadata"
+            ],
+            "support": {
+                "issues": "https://github.com/raphaelstolt/composer-peel/issues",
+                "source": "https://github.com/raphaelstolt/composer-peel/tree/v4.2.1"
+            },
+            "time": "2026-10-04T03:34:37+00:00",
+            "published-time": "2026-10-04T03:35:48+00:00"
         },
         {
             "name": "stolt/list-skills-command",
